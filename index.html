@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <!-- Parte Inferior (No Fija) -->
+        <!-- Parte Inferior -->
         <div class="header-bottom">
             <div class="header-left">
                 <a href="tel:+573223481428" class="icon-button no-underline">
@@ -40,7 +40,6 @@
                 </a>
             </div>
             <div class="nav-right">
-                <!-- Menú desplegable de Productos -->
                 <div class="dropdown">
                     <button class="dropbtn">Productos</button>
                     <div class="dropdown-content">
@@ -48,12 +47,10 @@
                         <a href="#">Lógica digital</a>
                         <a href="#">Diodos</a>
                         <a href="#">Condensadores</a>
-                        <a href="#">Resistores</a>
+                        <a href="subpages/resistores/resistores.html">Resistores</a>
                         <a href="#">Transistores</a>
-                        <a href="#">Accesorios</a>
                     </div>
                 </div>
-                <!-- Menú desplegable de Nuestros servicios -->
                 <div class="dropdown">
                     <button class="dropbtn">Nuestros servicios</button>
                     <div class="dropdown-content">
@@ -73,32 +70,51 @@
     <!-- Carrusel de Fotos -->
     <div class="carousel-container">
         <div class="carousel-slide">
-            <!-- Primera Imagen -->
-<div class="carousel-item">
-    <img src="carrusel/3D.png" alt="Impresión 3D" class="carousel-image">
-    <div class="carousel-text">
-        <span>IMPRESION</span>
-        <span>3D.</span>
-        <span>INNOVACION</span>
-        <span>CREATIVIDAD</span>
-        <span>PRECISION</span>
-    </div>
-</div>
-
-<!-- Segunda Imagen -->
-<div class="carousel-item">
-    <img src="carrusel/cnc.png" alt="CNC" class="carousel-image">
-    <div class="carousel-text">
-        <span>CNC.</span>
-        <span>eficiencia</span>
-        <span>exactitud</span>
-        <span>control</span>
-    </div>
-</div>
-
+            <div class="carousel-item">
+                <img src="carrusel/3D.png" alt="Impresión 3D" class="carousel-image">
+                <div class="carousel-text">
+                    <span>IMPRESION</span>
+                    <span>3D.</span>
+                    <span>INNOVACION</span>
+                    <span>CREATIVIDAD</span>
+                    <span>PRECISION</span>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="carrusel/cnc.png" alt="CNC" class="carousel-image">
+                <div class="carousel-text">
+                    <span>CNC.</span>
+                    <span>eficiencia</span>
+                    <span>exactitud</span>
+                    <span>control</span>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- Ventana Emergente: ¿Cómo pagar? -->
+    <div id="comoPagar" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('comoPagar')">&times;</span>
+            <h2>¿Cómo pagar?</h2>
+            <p>1. Transferencias a Nequi o Daviplata (3223481428).</p>
+            <p>2. Pago en efectivo.</p>
+            <p><span class="highlight-text">Envía tu comprobante al WhatsApp registrado.</span></p>
+        </div>
+    </div>
+
+    <!-- Ventana Emergente: ¿Quiénes somos? -->
+    <div id="quienesSomos" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('quienesSomos')">&times;</span>
+            <h2>¿Quiénes somos?</h2>
+            <h3>Misión</h3>
+            <p>Facilitar el acceso a componentes electrónicos difíciles de encontrar en la ciudad de Tunja.</p>
+            <h3>Visión</h3>
+            <p>Consolidarnos como una empresa líder en Tunja, generando empleo y fomentando el desarrollo local.</p>
+            <h3>Historia</h3>
+            <p>Nacimos como estudiantes y apasionados por la electrónica, enfrentando retos para conseguir materiales y componentes. Hoy, ofrecemos esta solución para apoyar a nuestra comunidad.</p>
+        </div>
+    </div>
 </body>
 </html>

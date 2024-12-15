@@ -1,0 +1,170 @@
+/* Estilos Generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Header */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0d6283; /* Azul */
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo-image {
+    max-width: 150px;
+    height: auto;
+}
+
+.nav-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Contenedor derecho del header */
+.header-right {
+    display: flex;
+    align-items: center; /* Centra verticalmente los botones */
+    gap: 20px; /* Espaciado entre los íconos */
+    margin-right: 20px; /* Separación del borde derecho */
+}
+
+.cart-button, .search-button {
+    background: none; /* Sin fondo */
+    border: none; /* Sin bordes */
+    cursor: pointer; /* Cursor de puntero */
+    display: flex; /* Asegura que la imagen esté centrada */
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-icon, .search-icon {
+    width: 30px; /* Tamaño de los íconos */
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Efecto suave para hover */
+}
+
+/* Efecto hover */
+.cart-button:hover .cart-icon, 
+.search-button:hover .search-icon {
+    transform: scale(1.2); /* Agranda un 20% el ícono */
+    filter: brightness(0) saturate(100%) invert(48%) sepia(80%) saturate(500%) hue-rotate(0deg); /* Naranja */
+}
+
+
+.nav-button:hover {
+    color: #FFA500; /* Naranja */
+}
+
+/* Contenedor de Productos */
+.product-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 80px; /* Evita que el header fijo cubra los productos */
+}
+
+.product-card {
+    position: relative;
+    width: 200px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.product-card h3 {
+    color: #ffb700; /* Azul */
+    margin: 10px 0 5px;
+}
+
+.product-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.product-title {
+    color: rgb(255, 165, 9); /* Azul desvanecido */
+    font-style: italic; /* Cursiva */
+    font-size: 60%; /* Disminuir tamaño en un 20% */
+    font-weight: bold;
+}
+
+
+/* Menú de Iconos Oculto Inicialmente */
+.product-menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transform: translateY(100%); /* Ocultar fuera del contenedor */
+    opacity: 0; /* Hacer el menú invisible */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transición suave */
+}
+
+.product-menu img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.product-menu img:hover {
+    transform: scale(1.3); /* Agranda un 30% */
+    filter: brightness(0) saturate(100%) invert(48%) sepia(80%) saturate(500%) hue-rotate(0deg); /* Naranja */
+}
+
+/* Mostrar el menú al hacer hover en el producto */
+.product-card:hover .product-menu {
+    transform: translateY(0); /* Mostrar el menú */
+    opacity: 1; /* Hacer visible el menú */
+}
+
+/* Efecto Hover en la Tarjeta */
+.product-card {
+    position: relative;
+    width: 200px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Eleva ligeramente la tarjeta */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
