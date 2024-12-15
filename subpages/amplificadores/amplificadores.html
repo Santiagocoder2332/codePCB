@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amplificadores</title>
+    <link rel="stylesheet" href="ampstyle.css"> <!-- Mantiene el mismo CSS -->
+    <script src="script.js" defer></script> <!-- Mantiene las funcionalidades -->
+</head>
+<body>
+    <!-- Header Fijo -->
+    <header class="header">
+        <!-- Parte Superior -->
+        <div class="header-top">
+            <div class="header-center">
+                <a href="../../front.html"> <img src="header/logo.png" alt="Logo" class="logo-image"></a>
+               
+                <button class="nav-button" onclick="openPopup('comoPagar')">¿Cómo pagar?</button>
+                <button class="nav-button" onclick="openPopup('quienesSomos')">¿Quiénes somos?</button>
+            </div>
+            <div class="header-right">
+                <button class="cart-button" aria-label="Ver carrito">
+                    <img src="header/cart-icon.png" alt="Carrito" class="cart-icon">
+                </button>
+                <button class="search-button" aria-label="Buscar">
+                    <img src="header/search-icon.png" alt="Lupa" class="search-icon">
+                </button>
+            </div>
+        </div>
+
+     
+        </div>
+    </header>
+
+    <!-- Sección de productos -->
+    <main class="product-container">
+        <div class="product-card">
+            <img src="amplificadores/ad620an.png" alt="Amplificador AD620AN">
+            <h3>Amplificador De Instrumentación AD620AN</h3>
+            <p><strong>$18.480,70</strong> Impuestos incluidos</p>
+            <p class="sku">SKU: VIS3838</p>
+            <p class="stock">Stock: 0</p>
+        </div>
+
+        <div class="product-card">
+            <img src="amplificadores/tl084cn.png" alt="Amplificador TL084CN">
+            <h3>Amplificador Operacional TL084CN</h3>
+            <p><strong>$1.309,00</strong> Impuestos incluidos</p>
+            <p class="sku">SKU: VIS3539</p>
+            <p class="stock">Stock: 47</p>
+        </div>
+
+        <div class="product-card">
+            <img src="amplificadores/mop21.png" alt="Amplificador MOP-21">
+            <h3>Módulo Amplificador De Instrumentación MOP-21</h3>
+            <p><strong>$35.669,06</strong> Impuestos incluidos</p>
+            <p class="sku">SKU: VIS3179</p>
+            <p class="stock">Stock: 5</p>
+        </div>
+    
+
+    <!-- Ventanas emergentes -->
+    <div id="comoPagar" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('comoPagar')">&times;</span>
+            <h2>¿Cómo pagar?</h2>
+            <p>1. Transferencias a Nequi<br>
+                <span class="highlight-text">(posteriormente enviar comprobante de pago al WhatsApp.)</span>
+            </p>
+            <p>2. Transferencias a Daviplata<br>
+                <span class="highlight-text">(posteriormente enviar comprobante de pago al WhatsApp.)</span>
+            </p>
+            <p>3. Pago en efectivo</p>
+        </div>
+    </div>
+
+    <div id="quienesSomos" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('quienesSomos')">&times;</span>
+            <h2>¿Quiénes somos?</h2>
+            <h3>Misión</h3>
+            <p>Facilitar el acceso a componentes electrónicos difíciles de encontrar en la ciudad de Tunja.</p>
+            <h3>Visión</h3>
+            <p>Consolidarnos como una empresa líder en Tunja, generando empleo y fomentando el desarrollo local.</p>
+            <h3>Historia</h3>
+            <p>Nacimos como estudiantes y apasionados por la electrónica, enfrentando retos para conseguir materiales y componentes. 
+               Hoy, ofrecemos esta solución para apoyar a nuestra comunidad.</p>
+        </div>
+    </div>
+</body>
+</html>

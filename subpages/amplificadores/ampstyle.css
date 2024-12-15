@@ -1,0 +1,256 @@
+/* Parte Superior del Header */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0d6283; /* Color de fondo */
+    color: white; /* Color del texto */
+    position: fixed; /* Hace que la parte superior sea fija */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que quede sobre otros elementos */
+}
+
+/* Centro del Header (Logo y Botones) */
+.header-center {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaciado entre el logo y los botones */
+}
+
+.logo-image {
+    max-width: 150px;
+    height: auto;
+    display: block;
+}
+
+/* Botones del Header */
+.nav-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-button:hover {
+    color: #FFA500; /* Cambia a naranja al pasar el cursor */
+}
+
+/* Lado Derecho del Header (Carrito y Lupa) */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaciado entre los íconos */
+}
+
+.cart-button, .search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-icon, .search-icon {
+    width: 35px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.cart-button:hover img, .search-button:hover img {
+    transform: scale(1.2); /* Efecto de agrandamiento al pasar el cursor */
+}
+
+/* Ventanas Emergentes */
+.popup {
+    display: none; /* Ocultas por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Asegura que las ventanas estén sobre todo */
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative; /* Para el botón de cerrar */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: red; /* Cambia el color al pasar el cursor */
+}
+
+.popup-content h2 {
+    color: #0d6283; /* Color del título */
+    margin-bottom: 15px;
+}
+
+.popup-content p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+    color: #555; /* Color del texto */
+}
+
+/* Responsividad */
+
+/* Tablets (Pantallas menores de 768px) */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .logo-image {
+        max-width: 120px;
+    }
+
+    .nav-button {
+        font-size: 14px; /* Botones más pequeños */
+    }
+
+    .cart-icon, .search-icon {
+        width: 30px; /* Íconos más pequeños */
+    }
+
+    .popup-content {
+        width: 90%; /* Ventanas más anchas en tablets */
+    }
+}
+
+/* Teléfonos (Pantallas menores de 576px) */
+@media (max-width: 576px) {
+    .header-top {
+        padding: 5px;
+    }
+
+    .logo-image {
+        max-width: 100px;
+    }
+
+    .nav-button {
+        font-size: 12px; /* Botones más pequeños */
+    }
+
+    .cart-icon, .search-icon {
+        width: 25px; /* Íconos más pequeños */
+    }
+
+    .popup-content {
+        width: 95%; /* Ventanas más anchas en teléfonos */
+        padding: 15px; /* Reducir el padding */
+    }
+
+    .close-btn {
+        top: 5px;
+        right: 10px;
+        font-size: 20px; /* Botón de cierre más pequeño */
+    }
+}
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    color: #333;
+}
+
+/* Header */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0d6283;
+    color: white;
+}
+
+.logo-image {
+    max-width: 150px;
+}
+
+.nav-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cart-icon, .search-icon {
+    width: 30px;
+}
+
+/* Contenedor de productos */
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-top: 80px; /* Para evitar que el header fijo cubra los cuadros */
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-card p {
+    margin: 5px 0;
+}
+
+.product-card .sku {
+    color: #888;
+}
+
+.product-card .stock {
+    color: red;
+    font-weight: bold;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Efecto hover */
+}

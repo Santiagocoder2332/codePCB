@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codePCB</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <!-- Parte Superior Fija -->
+        <div class="header-top">
+            <div class="header-center">
+                <img src="header/logo.png" alt="Logo" class="logo-image">
+                <button class="nav-button" onclick="openPopup('comoPagar')">¿Cómo pagar?</button>
+                <button class="nav-button" onclick="openPopup('quienesSomos')">¿Quiénes somos?</button>
+            </div>
+            <div class="header-right">
+                <button class="cart-button" aria-label="Ver carrito">
+                    <img src="header/cart-icon.png" alt="Carrito" class="cart-icon">
+                </button>
+                <button class="search-button" aria-label="Buscar">
+                    <img src="header/search-icon.png" alt="Lupa" class="search-icon">
+                </button>
+            </div>
+        </div>
+
+        <!-- Parte Inferior (No Fija) -->
+        <div class="header-bottom">
+            <div class="header-left">
+                <a href="tel:+573223481428" class="icon-button no-underline">
+                    <img src="header/phone-icon.png" alt="Teléfono" class="phone-icon">
+                </a>
+                <a href="mailto:codepcb.engineeringsolutions@gmail.com" class="icon-button no-underline">
+                    <img src="header/email-icon.png" alt="Correo" class="email-icon">
+                </a>
+                <a href="https://wa.me/573223481428" target="_blank" class="whatsapp-btn no-underline">
+                    <img src="header/whatsapp-logo.png" alt="WhatsApp" class="whatsapp-logo">
+                </a>
+            </div>
+            <div class="nav-right">
+                <!-- Menú desplegable de Productos -->
+                <div class="dropdown">
+                    <button class="dropbtn">Productos</button>
+                    <div class="dropdown-content">
+                        <a href="subpages/amplificadores/amplificadores.html">Amplificadores</a>
+                        <a href="#">Lógica digital</a>
+                        <a href="#">Diodos</a>
+                        <a href="#">Condensadores</a>
+                        <a href="#">Resistores</a>
+                        <a href="#">Transistores</a>
+                        <a href="#">Accesorios</a>
+                    </div>
+                </div>
+                <!-- Menú desplegable de Nuestros servicios -->
+                <div class="dropdown">
+                    <button class="dropbtn">Nuestros servicios</button>
+                    <div class="dropdown-content">
+                        <a href="#">Asesoría técnica</a>
+                        <a href="#">Asesoría académica</a>
+                        <a href="#">Prototipado</a>
+                        <a href="#">Impresión 3D</a>
+                        <a href="#">Desarrollo de proyectos</a>
+                        <a href="#">Impresión de circuitos</a>
+                        <a href="#">Corte láser</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Carrusel de Fotos -->
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <!-- Primera Imagen -->
+<div class="carousel-item">
+    <img src="carrusel/3D.png" alt="Impresión 3D" class="carousel-image">
+    <div class="carousel-text">
+        <span>IMPRESION</span>
+        <span>3D.</span>
+        <span>INNOVACION</span>
+        <span>CREATIVIDAD</span>
+        <span>PRECISION</span>
+    </div>
+</div>
+
+<!-- Segunda Imagen -->
+<div class="carousel-item">
+    <img src="carrusel/cnc.png" alt="CNC" class="carousel-image">
+    <div class="carousel-text">
+        <span>CNC.</span>
+        <span>eficiencia</span>
+        <span>exactitud</span>
+        <span>control</span>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
