@@ -26,7 +26,7 @@ a {
 }
 
 .logo-image {
-    max-width: 150px;
+    max-width: 250px;
     height: auto;
 }
 
@@ -56,12 +56,16 @@ a {
     align-items: center;
 }
 
-.cart-icon, .search-icon {
+.cart-icon {
+    width: 60px; /* Tamaño de los íconos */
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Efecto suave para hover */
+}
+.search-icon {
     width: 30px; /* Tamaño de los íconos */
     height: auto;
     transition: transform 0.3s ease, filter 0.3s ease; /* Efecto suave para hover */
 }
-
 /* Efecto hover */
 .cart-button:hover .cart-icon, 
 .search-button:hover .search-icon {
@@ -167,4 +171,91 @@ a {
 .product-card:hover {
     transform: translateY(-5px); /* Eleva ligeramente la tarjeta */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.main-content {
+    margin-left: 250px; /* Deja espacio para la columna del filtro */
+    padding: 20px; /* Ajusta si necesitas espacio adicional */
+    box-sizing: border-box; /* Evita problemas con el padding */
+}
+
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    top: 0;
+    left: 0;
+}
+
+.filter-column {
+    width: 250px;
+    padding: 20px;
+    background-color: #81b6d6;
+    border-right: 1px solid #0033fd;
+    position: fixed;
+    top: 45;
+    right: 0;
+}
+
+.filter-column h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filter-header {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.filter-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.filter-list li {
+    margin-bottom: 10px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Efecto hover */
+label:hover {
+    color: #ff9500;
+}
+
+/* Marcar opción seleccionada */
+input[type="checkbox"]:checked + span {
+    font-weight: bold;
+}
+
+/* Ajustar despliegue */
+.filter-list {
+    display: block;
+}
+
+.product-card.hidden {
+    display: none;
 }
