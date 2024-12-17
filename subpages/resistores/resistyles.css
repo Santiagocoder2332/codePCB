@@ -460,3 +460,85 @@ input[type="checkbox"]:checked + span {
 .close-button:hover {
     color: #e74c3c;
 }
+
+/* Estilos generales ya existentes */
+/* Estilos generales ya existentes */
+
+/* Pantallas pequeñas y medianas (móviles y tablets) */
+@media screen and (max-width: 768px) {
+    .header-top {
+        position: fixed;
+        z-index: 1000;
+    }
+
+    /* Contenedor principal para el layout */
+    .main-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding-top: 80px; /* Evita que el header fijo lo cubra */
+        height: 100vh;
+        overflow-y: hidden; /* Evita scroll en el contenedor principal */
+    }
+
+    /* Columna de filtros (fija a la izquierda) */
+    .filter-column {
+        position: fixed;
+        top: 80px; /* Evita que se sobreponga con el header */
+        left: 0; /* Ubicación a la izquierda */
+        height: calc(100% - 80px); /* Toma toda la altura sin afectar el header */
+        width: 200px; /* Espacio fijo en píxeles */
+        background-color: #81b6d6;
+        overflow-y: auto; /* Scroll independiente si hay demasiados filtros */
+        border-right: 2px solid #0033fd;
+        z-index: 998; /* Ajustado debajo del header */
+    }
+     /* Aumentar el tamaño de la fuente en la columna de filtros */
+     .filter-column h2, .filter-column li, .filter-column label {
+        font-size: 27px; /* Tamaño de la fuente ajustado */
+    }
+
+    /* Columna de productos (alineada a la derecha, configurable en ancho) */
+    .product-container {
+        width: var(--product-width, 700px); /* Usa una variable personalizable */
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+        gap: 5px;
+        padding: 10px;
+        margin-left: 250px; /* Inicia desde la derecha */
+        margin-right: 0; /* Espaciado cero al borde derecho */
+        overflow-y: auto; /* Scroll si hay muchas tarjetas */
+        box-sizing: border-box;
+    }
+
+    /* Tarjetas de producto */
+    .product-card {
+        width: 305px; /* Ajusta el tamaño de las tarjetas */
+        margin: 0 auto; /* Centra las tarjetas dentro de la grilla */
+    }
+}
+ /* Tarjetas de producto */
+ .product-card {
+   
+    font-size: 30px; /* Aumentar el tamaño de la fuente en las tarjetas */
+}
+
+/* Botón de agregar al carrito */
+.product-menu {
+    background: rgba(0, 0, 0, 0.8); /* Oscurece ligeramente el fondo */
+    padding: 10px 0; /* Espaciado vertical */
+}
+.product-menu img {
+    width: 64px; /* Duplica el tamaño del icono */
+    height: 64px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+/* Ventanas emergentes desplegadas */
+
+
+/* Estilos existentes para pantallas grandes */
+@media screen and (min-width: 769px) {
+    .product-container {
+        margin-left: 270px;
+    }
+}
