@@ -65,3 +65,40 @@ function applyFilters() {
         card.classList.toggle("hidden", !isVisible);
     });
 }
+
+function openPopup(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.style.display = "block";
+    }
+}
+
+function closePopup(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Cerrar la ventana emergente si se hace clic fuera
+window.onclick = function(event) {
+    const modal = document.getElementById("modal-popup");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+function openPopup(popupId) {
+    event.preventDefault(); // Evita que el enlace recargue la página
+    const modal = document.getElementById(popupId);
+    if (modal) {
+        modal.style.display = "block";
+    }
+}
+window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal'); // Selecciona todas las ventanas emergentes
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+};

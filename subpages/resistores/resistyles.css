@@ -39,43 +39,42 @@ a {
     transition: color 0.3s ease;
 }
 
-/* Contenedor derecho del header */
 .header-right {
     display: flex;
-    align-items: center; /* Centra verticalmente los botones */
-    gap: 20px; /* Espaciado entre los íconos */
-    margin-right: 20px; /* Separación del borde derecho */
+    align-items: center;
+    gap: 20px;
+    margin-right: 20px;
 }
 
 .cart-button, .search-button {
-    background: none; /* Sin fondo */
-    border: none; /* Sin bordes */
-    cursor: pointer; /* Cursor de puntero */
-    display: flex; /* Asegura que la imagen esté centrada */
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .cart-icon {
-    width: 60px; /* Tamaño de los íconos */
+    width: 60px;
     height: auto;
-    transition: transform 0.3s ease, filter 0.3s ease; /* Efecto suave para hover */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
+
 .search-icon {
-    width: 30px; /* Tamaño de los íconos */
+    width: 30px;
     height: auto;
-    transition: transform 0.3s ease, filter 0.3s ease; /* Efecto suave para hover */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
-/* Efecto hover */
+
 .cart-button:hover .cart-icon, 
 .search-button:hover .search-icon {
-    transform: scale(1.2); /* Agranda un 20% el ícono */
-    filter: brightness(0) saturate(100%) invert(48%) sepia(80%) saturate(500%) hue-rotate(0deg); /* Naranja */
+    transform: scale(1.2);
+    filter: brightness(0) saturate(100%) invert(48%) sepia(80%) saturate(500%) hue-rotate(0deg);
 }
 
-
 .nav-button:hover {
-    color: #FFA500; /* Naranja */
+    color: #FFA500;
 }
 
 /* Contenedor de Productos */
@@ -86,6 +85,7 @@ a {
     gap: 20px;
     padding: 20px;
     margin-top: 80px; /* Evita que el header fijo cubra los productos */
+    margin-left: 270px; /* Espacio para la columna de filtros */
 }
 
 .product-card {
@@ -106,7 +106,7 @@ a {
 }
 
 .product-card h3 {
-    color: #ffb700; /* Azul */
+    color: #ffb700;
     margin: 10px 0 5px;
 }
 
@@ -116,14 +116,12 @@ a {
 }
 
 .product-title {
-    color: rgb(255, 165, 9); /* Azul desvanecido */
-    font-style: italic; /* Cursiva */
-    font-size: 60%; /* Disminuir tamaño en un 20% */
+    color: rgb(255, 165, 9);
+    font-style: italic;
+    font-size: 60%;
     font-weight: bold;
 }
 
-
-/* Menú de Iconos Oculto Inicialmente */
 .product-menu {
     position: absolute;
     bottom: 0;
@@ -133,9 +131,9 @@ a {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    transform: translateY(100%); /* Ocultar fuera del contenedor */
-    opacity: 0; /* Hacer el menú invisible */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transición suave */
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .product-menu img {
@@ -145,58 +143,32 @@ a {
 }
 
 .product-menu img:hover {
-    transform: scale(1.3); /* Agranda un 30% */
-    filter: brightness(0) saturate(100%) invert(48%) sepia(80%) saturate(500%) hue-rotate(0deg); /* Naranja */
+    transform: scale(1.3);
+    filter: brightness(0) saturate(100%) invert(48%) sepia(80%) saturate(500%) hue-rotate(0deg);
 }
 
-/* Mostrar el menú al hacer hover en el producto */
 .product-card:hover .product-menu {
-    transform: translateY(0); /* Mostrar el menú */
-    opacity: 1; /* Hacer visible el menú */
-}
-
-/* Efecto Hover en la Tarjeta */
-.product-card {
-    position: relative;
-    width: 200px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .product-card:hover {
-    transform: translateY(-5px); /* Eleva ligeramente la tarjeta */
+    transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.main-content {
-    margin-left: 250px; /* Deja espacio para la columna del filtro */
-    padding: 20px; /* Ajusta si necesitas espacio adicional */
-    box-sizing: border-box; /* Evita problemas con el padding */
-}
-
-/* Estilo general */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    top: 0;
-    left: 0;
-}
-
+/* Columna de Filtros */
 .filter-column {
     width: 250px;
     padding: 20px;
     background-color: #81b6d6;
     border-right: 1px solid #0033fd;
     position: fixed;
-    top: 45;
-    right: 0;
+    top: 80px; /* Alineado con el header */
+    left: 0; /* Columna fija a la izquierda */
+    height: 100vh; /* Toda la altura de la ventana */
+    overflow-y: auto; /* Desplazamiento si hay muchos filtros */
+    z-index: 999; /* Sobre los productos */
 }
 
 .filter-column h2 {
@@ -241,21 +213,131 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-/* Efecto hover */
 label:hover {
     color: #ff9500;
 }
 
-/* Marcar opción seleccionada */
 input[type="checkbox"]:checked + span {
     font-weight: bold;
 }
 
-/* Ajustar despliegue */
-.filter-list {
-    display: block;
-}
-
+/* Ocultar tarjetas no coincidentes */
 .product-card.hidden {
     display: none;
+}
+
+/* Estilos Modernos para la Ventana Emergente */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Fondo degradado sutil */
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 15px; /* Bordes redondeados */
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra moderna */
+    text-align: center;
+    position: relative;
+}
+.modal-content > *:not(.close-button) {
+    animation: fadeIn 0.5s ease-in-out; /* Solo para los hijos, no afecta al botón */
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #333;
+    font-size: 34px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #ff0000; /* Azul moderno */
+}
+
+.modal-content h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    color: #ffb700;
+    margin-bottom: 30px;
+}
+
+.modal-content label {
+    display: block;
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.modal-content select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.add-to-cart-btn {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 5px 10px rgba(0, 123, 255, 0.3);
+    margin-top: 40px; 
+}
+
+.add-to-cart-btn:hover {
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 10px 15px rgba(0, 123, 255, 0.4);
+    background: linear-gradient(135deg, #0056b3, #003f88);
+}
+
+.modal-content select, .add-to-cart-btn {
+    max-width: 300px;
+    margin: 0 auto;
 }

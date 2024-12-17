@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resistencia Avanzada</title>
+    <link rel="stylesheet" href="mresistencia.css">
+</head>
+<body>
+    <h1>Modelo Avanzado de Resistencia</h1>
+
+    <!-- Resistor Visual -->
+    <div class="resistor-container">
+        <div class="lead left-lead"></div>
+        <div class="resistor-body">
+            <div class="band" id="band1"></div>
+            <div class="band" id="band2"></div>
+            <div class="band" id="band3"></div>
+            <div class="band" id="band4"></div>
+        </div>
+        <div class="lead right-lead"></div>
+    </div>
+
+    <!-- Selector de valores -->
+    <label for="resistor-value">Selecciona un valor de resistencia:</label>
+    <select id="resistor-value" onchange="updateResistorColors()">
+        <option value="brown-black-red-gold">100 Ω</option>
+        <option value="red-black-orange-gold">20 kΩ</option>
+        <option value="yellow-violet-brown-gold">470 Ω</option>
+    </select>
+
+    <script src="mresistencia.js"></script>
+</body>
+</html>
