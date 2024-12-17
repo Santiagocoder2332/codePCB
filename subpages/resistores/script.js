@@ -102,3 +102,29 @@ window.onclick = function(event) {
         }
     });
 };
+// Abre la ventana emergente
+function openPopup(id, event) {
+    if (event) event.preventDefault(); // Previene el comportamiento por defecto
+    const popup = document.getElementById(id);
+    if (popup) {
+        popup.style.display = 'block';
+    }
+}
+
+// Cierra la ventana emergente
+function closePopup(id) {
+    const popup = document.getElementById(id);
+    if (popup) {
+        popup.style.display = 'none';
+    }
+}
+
+// Cierra la ventana si se hace clic fuera del contenido
+window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+};
