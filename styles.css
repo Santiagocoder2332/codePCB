@@ -1,74 +1,79 @@
-/* General */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #F8F9FA;
-    color: #212529;
+:root {
+    --icon-size-cart: 50px; /* Tamaño específico para el carrito */
+    --icon-size-search: 40px; /* Tamaño específico para la lupa */
+    --icon-size-other: 40px; /* Tamaño para otros iconos */
+    --hover-color: #00ffff;
+    --header-bg: linear-gradient(135deg, #001f3f, #004d73);
+    --menu-bg: #002244;
+    --menu-hover-bg: #00ffff;
+    --menu-text-color: #fff;
+    --menu-hover-text: #001f3f;
 }
 
 .header {
-    background-color: #0d6283;
-    color: white;
+    background: var(--header-bg);
+    color: var(--menu-text-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    font-family: 'Arial', sans-serif;
+    border-bottom: 3px solid var(--hover-color);
 }
 
-/* Quitar líneas azules (subrayado) de enlaces */
-a {
-    text-decoration: none;
-}
-
-.no-underline {
-    text-decoration: none;
-}
-
-/* Parte Superior */
+/* Header Top */
 .header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-}
-
-.header-left, .header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    padding: 10px 30px;
 }
 
 .header-center {
     display: flex;
-    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
-.nav-button {
-    background-color: transparent;
-    color: white;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.nav-button:hover {
-    color: #FFA500;
-}
-
-/* Iconos individuales */
-.phone-icon, .email-icon, .whatsapp-logo {
-    width: 35px;
-    height: auto;
+.logo-image {
+    width: 250px;
     transition: transform 0.3s ease;
 }
 
-.phone-icon:hover, .email-icon:hover, .whatsapp-logo:hover {
-    transform: scale(1.2);
+.logo-image:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.nav-button {
+    background: none;
+    color: var(--menu-text-color);
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-button:hover {
+    color: var(--hover-color);
+}
+
+.nav-button::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--hover-color);
+    transition: width 0.3s ease;
+}
+
+.nav-button:hover::after {
+    width: 100%;
+}
+
+/* Iconos Correctos */
+.header-right {
+    display: flex;
+    gap: 20px;
 }
 
 .cart-button, .search-button {
@@ -77,356 +82,508 @@ a {
     cursor: pointer;
 }
 
-.cart-icon, .search-icon {
-    width: 50px;
+.cart-icon {
+    width: var(--icon-size-cart);
+    height: auto; /* Mantener proporción */
+    filter: drop-shadow(0 0 5px var(--hover-color));
+    transition: transform 0.3s ease, filter 0.3s;
+}
+
+.search-icon {
+    width: var(--icon-size-search);
     height: auto;
-    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 5px var(--hover-color));
+    transition: transform 0.3s ease, filter 0.3s;
 }
 
-.cart-button:hover img, .search-button:hover img {
-    transform: scale(1.2);
+.cart-icon:hover, .search-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px var(--hover-color));
 }
 
-/* Parte Inferior Sticky */
-.header-bottom {
-    position: sticky;
-    top: 70px; /* Ajuste para dejar espacio bajo el header-top */
-    background-color: #0d6283;
-    z-index: 500;
-    transition: top 0.3s ease;
-}
-
-/* Parte Inferior */
+/* Header Bottom */
 .header-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 30px;
+    background: rgba(0, 31, 63, 0.9);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo-container {
-    flex: 1;
+.header-left {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo-image {
-    max-width: 300px;
-    height: auto;
-}
-
-.nav-right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
-/* Dropdown (Menús desplegables) */
+.icon-button img, .whatsapp-btn img {
+    width: var(--icon-size-other);
+    height: var(--icon-size-other);
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 5px var(--hover-color));
+}
+
+.icon-button img:hover, .whatsapp-btn img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px var(--hover-color));
+}
+/* Menús Desplegables */
+.nav-right {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Ajusta si los botones exceden el ancho */
+}
+
 .dropdown {
     position: relative;
-    display: inline-block;
 }
 
 .dropbtn {
-    background-color: transparent;
-    color: white;
-    border: none;
+    background: none;
+    color: var(--menu-text-color);
     font-size: 18px;
+    border: none;
     cursor: pointer;
     transition: color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px;
 }
 
 .dropbtn:hover {
-    color: #FFA500;
+    color: var(--hover-color);
 }
 
+/* Contenedor desplegable ajustado al tamaño del texto */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    background: var(--menu-bg);
+    border: 1px solid var(--hover-color);
+    box-shadow: 0 8px 16px rgba(0, 255, 255, 0.2);
     border-radius: 5px;
-    overflow: hidden;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in-out;
+    min-width: max-content;
+    white-space: nowrap;
 }
 
 .dropdown-content a {
-    color: #0d6283;
-    padding: 12px 16px;
+    color: var(--menu-text-color);
+    padding: 10px 20px;
     text-decoration: none;
     display: block;
     transition: background 0.3s, color 0.3s;
 }
 
 .dropdown-content a:hover {
-    background-color: #FFA500;
-    color: white;
+    background: var(--menu-hover-bg);
+    color: var(--menu-hover-text);
 }
 
-/* Mostrar menú desplegable al pasar el cursor */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Ventanas emergentes */
-.popup {
+/* Animación de FadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======== RESPONSIVIDAD ======== */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 768px) {
+    .nav-right {
+        flex-direction: column; /* Botones en columna */
+        gap: 10px;
+        align-items: center; /* Centra los botones */
+    }
+
+    .dropdown-content {
+        position: relative; /* El menú se desplegará debajo */
+        box-shadow: none; /* Remueve sombra en pantallas pequeñas */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        text-align: center;
+    }
+
+    .dropbtn {
+        font-size: 16px; /* Botones más pequeños */
+        padding: 8px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .dropbtn {
+        font-size: 14px; /* Reduce el tamaño del texto */
+        padding: 5px;
+    }
+
+    .dropdown-content a {
+        padding: 8px 10px; /* Espacio más compacto */
+    }
+
+    .dropdown-content {
+        width: 100%; /* Asegura que ocupe todo el ancho */
+        text-align: center;
+    }
+}
+
+/* Contenedor del menú desplegable */
+.dropdown {
+    position: relative; /* Punto de referencia */
+}
+
+/* Contenido del menú desplegable */
+.dropdown-content {
     display: none;
+    position: absolute;
+    background: var(--menu-bg);
+    border: 1px solid var(--hover-color);
+    box-shadow: 0 8px 16px rgba(0, 255, 255, 0.2);
+    border-radius: 5px;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in-out;
+    min-width: max-content;
+    white-space: nowrap;
+    right: 0; /* Alinea el menú hacia la izquierda si está cerca del borde */
+    left: auto; /* Evita desbordamiento */
+}
+
+/* Mostrar el dropdown al pasar el cursor */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Enlaces dentro del menú */
+.dropdown-content a {
+    color: var(--menu-text-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background: var(--menu-hover-bg);
+    color: var(--menu-hover-text);
+}
+
+/* Animación de FadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header-top, .header-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .logo-image {
+        width: 150px;
+    }
+
+    .nav-button, .dropbtn {
+        font-size: 16px;
+    }
+
+    .dropdown-content {
+        width: 100%;
+    }
+}
+
+/* Sección de Servicios */
+/* Estilos generales */
+.services {
+    position: relative;
+    padding: 8vh 5vw;
+    background: linear-gradient(135deg, #0d1117, #1a1f24);
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* Fondo dinámico */
+.services::before,
+.services::after {
+    content: "";
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    background: radial-gradient(circle, rgba(0, 188, 212, 0.5), transparent);
+    filter: blur(100px);
+    pointer-events: none;
+}
+
+.services::before {
+    top: 10%;
+    left: 5%;
+}
+
+.services::after {
+    bottom: 10%;
+    right: 5%;
+}
+
+/* Título y descripción */
+.section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #00bcd4;
+    text-transform: uppercase;
+    margin-bottom: 2vh;
+}
+
+.section-description {
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    color: #aaa;
+    margin-bottom: 5vh;
+}
+
+/* Grid de servicios */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3vw;
+    justify-items: center;
+}
+
+/* Tarjetas */
+.service-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0px 10px 25px rgba(0, 188, 212, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 30px rgba(0, 188, 212, 0.6);
+}
+
+/* Imágenes */
+.service-card img {
+    width: 100%;
+    height: 30vh; /* Altura relativa para pantallas grandes */
+    object-fit: contain;
+    background-color: #000;
+}
+
+/* Contenido dentro de las tarjetas */
+.service-info {
+    padding: 2vw;
+    text-align: left;
+}
+
+.service-info h3 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: #00bcd4;
+    margin-bottom: 10px;
+}
+
+.service-info p {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.7;
+    color: #ccc;
+}
+
+/* Media Query para pantallas grandes (desktops y monitores) */
+@media (min-width: 1200px) {
+    .services {
+        padding: 10vh 10vw;
+    }
+
+    .services-grid {
+        gap: 5vw;
+    }
+
+    .service-card img {
+        height: 35vh; /* Aumenta el tamaño de la imagen */
+    }
+
+    .service-info h3 {
+        font-size: 2rem; /* Títulos más grandes */
+    }
+
+    .service-info p {
+        font-size: 1.3rem; /* Texto más grande */
+    }
+}
+/* Contenedor de partículas dentro de la sección */
+#particles-js {
+    position: absolute; /* Se coloca dentro de la sección */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Detrás del contenido excepto las imágenes */
+    background: transparent;
+}
+
+/* Sección de servicios */
+.services {
+    position: relative; /* Permite posicionar elementos secundarios */
+    padding: 8vh 5vw;
+    text-align: center;
+    color: #ffffff;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0d1117, #1a1f24);
+}
+
+.section-title {
+    position: relative;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #00bcd4;
+    margin-bottom: 2vh;
+    z-index: 1;
+}
+
+.section-description {
+    position: relative;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    color: #aaa;
+    margin-bottom: 5vh;
+    z-index: 1;
+}
+
+/* Grid de servicios */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3vw;
+    justify-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Tarjetas */
+.service-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 10px 25px rgba(0, 188, 212, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.service-card img {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    object-fit: contain;
+    z-index: 2; /* Encima de las partículas */
+    background-color: #000;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo general del popup */
+.popup {
+    display: none; /* Oculto por defecto */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    backdrop-filter: blur(5px); /* Difuminado elegante */
+    z-index: 1000; /* Por encima de todo */
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    animation: fadeIn 0.5s ease; /* Animación de entrada */
 }
 
+/* Contenido del popup */
 .popup-content {
-    background: white;
-    padding: 20px;
+    background: #1f1f1f; /* Color oscuro moderno */
+    color: #ffffff;
+    padding: 30px;
     border-radius: 10px;
-    width: 80%;
+    width: 90%;
     max-width: 500px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 188, 212, 0.4);
+    transform: scale(0.7);
+    animation: scaleUp 0.5s ease forwards;
 }
 
+/* Botón de cierre */
 .close-btn {
+    color: #00bcd4;
+    font-size: 2rem;
     position: absolute;
     top: 10px;
-    right: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #000;
+    right: 15px;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .close-btn:hover {
-    color: red;
+    color: #00ffe5;
 }
 
-.highlight-text {
-    color: red;
-    font-weight: bold;
+/* Títulos y textos destacados */
+.popup-content h2, h3 {
+    margin-top: 0;
+    color: #00bcd4;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .popup-content p {
-    margin-bottom: 15px;
+    font-size: 1.1rem;
     line-height: 1.5;
+    margin-bottom: 10px;
+    color: #ddd;
+    text-align: justify;
 }
 
-.popup-content h3 {
-    margin-top: 15px;
-    margin-bottom: 5px;
-    color: #0d6283;
+.highlight-text {
+    color: #00ffe5;
+    font-weight: bold;
 }
 
-/* Responsividad */
-
-/* Tablets */
-@media (max-width: 768px) {
-    .header-top, .header-bottom {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .logo-image {
-        max-width: 200px;
-    }
-
-    .nav-button, .dropbtn {
-        font-size: 14px;
-    }
-
-    .dropdown-content {
-        position: relative;
-        box-shadow: none;
-        background-color: transparent;
-    }
-
-    .dropdown-content a {
-        background-color: white;
-        margin: 5px 0;
-        border-radius: 5px;
-    }
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Teléfonos */
-@media (max-width: 576px) {
-    .header-top, .header-bottom {
-        padding: 5px;
-        gap: 5px;
-    }
-
-    .logo-image {
-        max-width: 150px;
-    }
-
-    .nav-button, .dropbtn {
-        font-size: 12px;
-    }
-
-    .popup-content {
-        width: 95%;
-        padding: 15px;
-    }
-
-    .close-btn {
-        top: 5px;
-        right: 10px;
-        font-size: 20px;
-    }
+@keyframes scaleUp {
+    from { transform: scale(0.7); }
+    to { transform: scale(1); }
 }
 
-/* Estilo general del carrusel */
-.carousel-container {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-    position: relative;
-    min-width: 100%;
-    text-align: center;
-}
-
-.carousel-image {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.carousel-text {
-    position: absolute;
-    bottom: 10%; /* Ajusta la posición vertical */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
-    color: #FFA500; /* Color naranja */
-    padding: 15px 20px; /* Espaciado interno */
-    border-radius: 8px; /* Bordes redondeados */
-    font-family: 'Orbitron', sans-serif; /* Fuente tecnológica */
-    font-size: 20px; /* Tamaño de letra */
-    font-weight: 600; /* Grosor de la fuente */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    text-align: center; /* Centra el texto */
-    letter-spacing: 2px; /* Espaciado entre letras */
-    line-height: 1.8; /* Espaciado entre líneas */
-    width: 80%; /* Ajusta el ancho del bloque */
-    max-width: 300px; /* Máximo ancho del bloque */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para efecto 3D */
-}/* Contenedor general */
-.carousel-container {
-    position: relative;
-    width: 80%;
-    max-width: 600px;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* Carrusel de imágenes */
-.carousel-slide {
-    display: flex;
-    transition: transform 1s ease-in-out;
-}
-
-.carousel-item {
-    position: relative;
-    min-width: 100%;
-    text-align: center;
-}
-
-/* Imágenes */
-.carousel-image {
-    width: 100%;
-    height: auto;
-}
-
-/* Texto */
-.carousel-text {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-}
-
-.carousel-text span {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 20px;
-    color: #FFA500;
-    text-transform: uppercase;
-    opacity: 0; /* Oculto inicialmente */
-    transform: translateY(50px); /* Desplazamiento inicial */
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-
-
-/* Estilo general del carrusel */
-.carousel-container {
-    position: relative;
-    width: 100%; /* Ajusta el tamaño del carrusel */
-    max-width: 600px; /* Máximo ancho */
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-image {
-    min-width: 100%;
-    height: auto;
-}
-
-/* Flechas de navegación */
-.carousel-prev, .carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-}
-
-.carousel-prev:hover, .carousel-next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.carousel-prev {
-    left: 10px;
-}
-
-.carousel-next {
-    right: 10px;
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
 }
 
