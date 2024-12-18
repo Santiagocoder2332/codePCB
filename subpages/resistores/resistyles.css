@@ -187,7 +187,8 @@ a {
     gap: 20px; /* Espaciado entre tarjetas */
     padding: 20px;
     margin-top: 80px; /* Evita que el header lo cubra */
-    margin-left: 250px; /* Espacio para la columna de filtros */
+    margin-left: 250px; 
+    margin-right: 0px;/* Espacio para la columna de filtros */
     background-color: #1b1b1b; /* Fondo oscuro */
     border: 1px solid #333;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
@@ -195,59 +196,62 @@ a {
     min-height: calc(100vh - 80px); /* Altura mínima para ocupar la pantalla */
 }
 
-
-
 /* Tarjeta de Producto */
 .product-card {
-    position: relative;
     width: 200px;
-    background: linear-gradient(135deg, #0d1f2d, #1b2b3a); /* Degradado oscuro */
-    border: 1px solid #0dfffc;
-    border-radius: 10px;
+    background: linear-gradient(135deg, #0d1f2d, #1b2b3a); /* Fondo moderno con degradado */
+    border: 1px solid rgba(13, 255, 252, 0.5); /* Borde sutil iluminado */
+    border-radius: 10px; /* Bordes más redondeados */
     text-align: center;
     padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    height: 320px;
+    overflow: hidden;
 }
 
+/* Imagen del Producto */
 .product-card img {
-    width: 100%;
-    border-radius: 5px;
-    filter: drop-shadow(0 0 5px #0dfffc);
-    transition: transform 0.3s ease;
+    width: 70%; /* Más prominente */
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 5px rgba(13, 255, 252, 0.5)); /* Efecto de sombra brillante */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.product-card:hover img {
-    transform: scale(1.05);
+
+
+.product-card img:hover {
+    transform: scale(1.1); /* Efecto de zoom ligero */
+    filter: drop-shadow(0 0 10px rgba(13, 255, 252, 0.7));
 }
 
+/* Título del Precio */
 .product-card h3 {
-    color: #0dfffc;
+    color: #0dfffc; /* Cian brillante */
     margin: 10px 0 5px;
     font-size: 18px;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
+/* Descripción del Producto */
 .product-card p {
     margin: 5px 0;
-    color: #cccccc;
+    color: #cccccc; /* Gris claro */
     font-size: 14px;
+    line-height: 1.4;
 }
 
-.product-title {
-    color: #FFA500;
-    font-style: italic;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-/* Menú de acciones */
+/* Menú de Añadir al Carrito */
 .product-menu {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8); /* Fondo más oscuro */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -257,24 +261,57 @@ a {
 }
 
 .product-menu img {
-    width: 24px;
-    height: 24px;
+    width: 28px; /* Íconos ligeramente más grandes */
+    height: 28px;
     transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(13, 255, 252, 0.5)); /* Sombra inicial */
 }
 
 .product-menu img:hover {
-    transform: scale(1.3);
-    filter: brightness(0) saturate(100%) invert(48%) sepia(80%) saturate(500%) hue-rotate(0deg);
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px rgba(13, 255, 252, 0.8)); /* Brillo más intenso */
 }
 
+/* Efectos al pasar el mouse sobre la tarjeta */
 .product-card:hover .product-menu {
-    transform: translateY(0);
+    transform: translateY(0); /* Muestra el menú */
     opacity: 1;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 16px rgba(13, 255, 252, 0.3); /* Sombra con tinte cian */
+    border-color: rgba(13, 255, 252, 0.8); /* Borde iluminado */
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    .filter-column {
+        width: 200px;
+    }
+
+    .product-container {
+        margin-left: 200px;
+    }
+
+    .product-card {
+        width: calc(100% - 20px); /* 1 sola columna */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .filter-column {
+        width: 150px;
+    }
+
+    .product-container {
+        margin-left: 150px;
+        margin-top: 90px; /* Ajuste para pantallas pequeñas */
+    }
+
+    .product-card {
+        width: 100%;
+    }
 }
 
 
