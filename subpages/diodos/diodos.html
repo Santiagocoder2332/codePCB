@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diodos</title>
+    <link rel="stylesheet" href="diodos.css"> <!-- Enlace al CSS separado -->
+    <script src="diodos.js" defer></script> <!-- Script para funcionalidades -->
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="header-center">
+                <a href="../../index.html">
+                    <img src="header/logo.png" alt="Logo" class="logo-image">
+                </a>
+            </div>
+            <div class="header-right">
+                <button class="cart-button" aria-label="Ver carrito">
+                    <img src="header/cart-icon.png" alt="Carrito" class="cart-icon">
+                </button>
+                <button class="search-button" aria-label="Buscar">
+                    <img src="header/search-icon.png" alt="Lupa" class="search-icon">
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="product-container">
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="2.7V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 2.7V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W2-7V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="2.2V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 2.2V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W2-2V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="24V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 24V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W24V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="20V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 20V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W20V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="18V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 18V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W18V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="15V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 15V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W15V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="12V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 12V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W12V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="11V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 11V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W11V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="10V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 10V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W10V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="9.1V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 9.1V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W9-1V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="8.2V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 8.2V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W8-2V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="7.5V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 7.5V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W7-5V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="6.8V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 6.8V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W6-8V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="6.2V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 6.2V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W6-2V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="5.1V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 5.1V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W5-1V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="4.7V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 4.7V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W4-7V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="3.9V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 3.9V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W3-9V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1W" data-voltage="3.3V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$250,00</h3>
+            <p>Diodo Zener 1W - 3.3V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1W3-3V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="24V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 24V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W24V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="20V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 20V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W20V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="18V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 18V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W18V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="15V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 15V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W15V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="12V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 12V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W12V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="11V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 11V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W11V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="10V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 10V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W10V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="9.1V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 9.1V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W9-1V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="8.2V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 8.2V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W8-2V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="7.5V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 7.5V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W7-5V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="6.8V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 6.8V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W6-8V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="6.2V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 6.2V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W6-2V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="5.1V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 5.1V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W5-1V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="4.7V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 4.7V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W4-7V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="3.9V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 3.9V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W3-9V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="zener" data-potencia="1-2W" data-voltage="3.3V">
+            <img src="images/zener.png" alt="diodo-zener">
+            <h3>$150,00</h3>
+            <p>Diodo Zener 1/2W - 3.3V</p>
+            <p class="product-title">Diodos - Diodo Zener</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1-2W3-3V', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-referencia="W04M" data-corriente="1.5A" data-voltage="400V" data-tipo="puente">
+            <img src="images/W04M.png" alt="puente-rectificador">
+            <h3>$900,00</h3>
+            <p>Puente Rectificador W04M - 1.5A - 400V</p>
+            <p class="product-title">Diodos - Puente Rectificador W04M</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-W04M', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-referencia="GBU610" data-corriente="6A" data-voltage="1000V" data-tipo="puente">
+            <img src="images/GBU610.png" alt="puente-rectificador">
+            <h3>$1.800,00</h3>
+            <p>Puente Rectificador GBU610 - 6A - 1000V</p>
+            <p class="product-title">Diodos - Puente Rectificador GBU610</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-GBU610', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-referencia="KBP206" data-corriente="2A" data-voltage="600V" data-tipo="puente">
+            <img src="images/KBP206.png" alt="puente-rectificador">
+            <h3>$1.000,00</h3>
+            <p>Puente Rectificador KBP206 - 2A - 600V</p>
+            <p class="product-title">Diodos - Puente Rectificador KBP206</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-KBP206', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-referencia="GBU810" data-corriente="8A" data-voltage="1000V" data-tipo="puente">
+            <img src="images/GBU810.png" alt="puente-rectificador">
+            <h3>$2.000,00</h3>
+            <p>Puente Rectificador GBU810 - 8A - 1000V</p>
+            <p class="product-title">Diodos - Puente Rectificador GBU810</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-GBU810', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-referencia="KBL410" data-corriente="4A" data-voltage="1000V" data-tipo="puente">
+            <img src="images/KBL410.png" alt="puente-rectificador">
+            <h3>$1.600,00</h3>
+            <p>Puente Rectificador KBL410 - 4A - 1000V</p>
+            <p class="product-title">Diodos - Puente Rectificador KBL410</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-KBL410', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="dled">
+            <img src="images/difusos.png" alt="led-difuso">
+            <h3>$100,00</h3>
+            <p>LED Difuso</p>
+            <p class="product-title">Diodos - Diodo LED Difuso</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-difuso', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-tipo="dled">
+            <img src="images/chorro.png" alt="led-chorro">
+            <h3>$100,00</h3>
+            <p>LED Chorro</p>
+            <p class="product-title">Diodos - Diodo LED Chorro</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-chorro', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-referencia="1N4001" data-tipo="rectificador">
+            <img src="images/peque.png" alt="diodo-1N4001">
+            <h3>$100,00</h3>
+            <p>Diodo 1N4001</p>
+            <p class="product-title">Diodos - Diodo rectificador 1N4001</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1N4001', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-referencia="1N4002" data-tipo="rectificador">
+            <img src="images/peque.png" alt="diodo-1N4002">
+            <h3>$100,00</h3>
+            <p>Diodo 1N4002</p>
+            <p class="product-title">Diodos - Diodo rectificador 1N4002</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1N4002', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-referencia="1N4003" data-tipo="rectificador">
+            <img src="images/peque.png" alt="diodo-1N4003">
+            <h3>$100,00</h3>
+            <p>Diodo 1N4003</p>
+            <p class="product-title">Diodos - Diodo rectificador 1N4003</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1N4003', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-referencia="1N4004" data-tipo="rectificador">
+            <img src="images/peque.png" alt="diodo-1N4004">
+            <h3>$100,00</h3>
+            <p>Diodo 1N4004</p>
+            <p class="product-title">Diodos - Diodo rectificador 1N4004</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1N4004', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-referencia="1N4005" data-tipo="rectificador">
+            <img src="images/peque.png" alt="diodo-1N4005">
+            <h3>$100,00</h3>
+            <p>Diodo 1N4005</p>
+            <p class="product-title">Diodos - Diodo rectificador 1N4005</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1N4005', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-referencia="1N4006" data-tipo="rectificador">
+            <img src="images/peque.png" alt="diodo-1N4006">
+            <h3>$100,00</h3>
+            <p>Diodo 1N4006</p>
+            <p class="product-title">Diodos - Diodo rectificador 1N4006</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1N4006', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        
+        <div class="product-card" data-referencia="1N4007" data-tipo="rectificador">
+            <img src="images/peque.png" alt="diodo-1N4007">
+            <h3>$100,00</h3>
+            <p>Diodo 1N4007</p>
+            <p class="product-title">Diodos - Diodo rectificador 1N4007</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-1N4007', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+        <div class="product-card" data-tipo="rectificadorpotencia">
+            <img src="images/power.png" alt="diodo-6A10">
+            <h3>$800,00</h3>
+            <p>Diodo 6A10 - 1000V - 6A</p>
+            <p class="product-title">Diodos - Diodo rectificador de potencia</p>
+            <div class="product-menu">
+                <a href="#" title="Añadir al carrito" onclick="openPopup('modal-6A10', event)">
+                    <img src="images/cart-icon.png" alt="Carrito">
+                </a>
+            </div>
+        </div>
+               
+    </main>
+    <aside class="filter-column">
+        <h2>Filtrar por:</h2>
+    
+        <!-- Rectificadores -->
+        <div class="filter-section">
+            <ul id="filter-rectificadores" class="filter-list">
+                <li>
+                    <label>
+                        <input type="checkbox" value="rectificador" class="filter-checkbox" data-filter="rectificador">
+                        Rectificadores
+                    </label>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- Puentes rectificadores -->
+        <div class="filter-section">
+            <ul id="filter-puentes" class="filter-list">
+                <li>
+                    <label>
+                        <input type="checkbox" value="puente" class="filter-checkbox" data-filter="puente">
+                        Puentes rectificadores
+                    </label>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- Diodos Zener -->
+        <div class="filter-section">
+            <ul id="filter-zener" class="filter-list">
+                <li>
+                    <label>
+                        <input type="checkbox" value="zener" class="filter-checkbox" data-filter="zener">
+                        Diodos Zener
+                    </label>
+                </li>
+            </ul>
+        </div>
+    
+        <!-- Rectificadores de potencia -->
+        <div class="filter-section">
+            <ul id="filter-rectificadores-potencia" class="filter-list">
+                <li>
+                    <label>
+                        <input type="checkbox" value="rectificadorpotencia" class="filter-checkbox" data-filter="rectificadorpotencia">
+                        Rectificadores de potencia
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    
+</html>

@@ -1,33 +1,23 @@
-// Abre una ventana emergente
-function openPopup(id, event) {
-    if (event) event.preventDefault(); // Previene el comportamiento por defecto
-    const popup = document.getElementById(id);
-    if (popup) {
-        popup.style.display = 'flex'; // Muestra la ventana emergente
-    } else {
-        console.error(`No se encontró el elemento con ID: ${id}`);
-    }
+// Función para mostrar la ventana modal
+function openPopup(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = "flex";
 }
 
-// Cierra una ventana emergente
-function closePopup(id) {
-    const popup = document.getElementById(id);
-    if (popup) {
-        popup.style.display = 'none'; // Oculta la ventana emergente
-    } else {
-        console.error(`No se encontró el elemento con ID: ${id}`);
-    }
+// Función para cerrar la ventana modal
+function closePopup(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = "none";
 }
 
-// Cierra una ventana emergente si se hace clic fuera
+// Cerrar la ventana si se hace clic fuera del contenido
 window.onclick = function(event) {
-    const modals = document.querySelectorAll('.modal'); // Selecciona todas las ventanas emergentes
-    modals.forEach(modal => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
+    const modal = document.getElementById("modal-0.1uF50V");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
 };
+
 
 // Alterna la visibilidad de las secciones de filtro
 function toggleSection(id) {

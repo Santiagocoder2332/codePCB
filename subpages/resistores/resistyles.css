@@ -670,3 +670,23 @@ input[type="checkbox"]:checked + span {
     }
 }
 
+@media screen and (max-width: 480px) {
+    .product-container {
+        display: flex;
+        flex-direction: column; /* Columna única */
+        align-items: center; /* Centra las tarjetas */
+        margin: 100px 0 0 100px; /* Margen superior para el header y a la izquierda para filtros */
+        width: calc(100% - 100px); /* Ancho ajustado considerando la columna de filtros */
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .product-card {
+        width: 50%; /* Usa casi todo el ancho */
+        margin-bottom: 10px;
+    }
+
+    .filter-column {
+        width: 110px; /* Filtros más compactos */
+    }
+}
